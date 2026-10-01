@@ -1,0 +1,6 @@
+{
+  "name": "PixelShield AI",
+  "description": "AI-powered media privacy and safety platform that analyzes, protects, transforms, and optimizes images using Cloudinary.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
