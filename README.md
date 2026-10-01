@@ -4,8 +4,8 @@
 > AI-powered media privacy, content safety, and delivery optimization platform built for **HackIndia 2026: Pixels to Products — Cloudinary AI Hackathon**.
 
 **Hackathon Track:** Track 1 — AI Media Pipelines  
-**Live Demo:** (https://pixelshield-ai.vercel.app/) 
-**GitHub Repository:** [https://github.com/wog958101/pixelshield-ai](https://github.com/wog958101/pixelshield-ai)  
+**Live Demo:** [[https://pixelshield-ai.vercel.app/]]
+**GitHub Repository:**[ [https://github.com/wog958101-coder/PixelSheildAi]]
 **License:** MIT
 
 ---
