@@ -393,67 +393,67 @@ export function ImageUploader({
             </div>
           </div>
 
-          {/* Quick Demo Presets */}
+          {/* Safe Sample Test Photos */}
           <div className="rounded-2xl border border-zinc-200/80 bg-zinc-50/60 p-4 dark:border-zinc-800 dark:bg-zinc-900/40">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
                 <span className="text-xs font-bold text-zinc-900 dark:text-white">
-                  Instant Test Presets
+                  Sample Test Photos
                 </span>
               </div>
-              <span className="text-[11px] text-zinc-400 font-medium">One-click scenarios</span>
+              <span className="text-[11px] text-zinc-400 font-medium">Click to upload and analyze</span>
             </div>
 
             <div className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
               <button
                 type="button"
-                onClick={() => onSelectSample('portrait_id')}
+                onClick={() => onSelectSample('portrait')}
                 disabled={isProcessing}
                 className="flex flex-col items-start rounded-xl border border-zinc-200 bg-white p-3 text-left transition hover:border-sky-400 hover:shadow-xs active:scale-[0.99] dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-sky-500 cursor-pointer"
               >
                 <div className="flex w-full items-center justify-between">
-                  <span className="text-xs font-bold text-zinc-900 dark:text-white">Portrait Face ID</span>
-                  <span className="rounded bg-rose-100 px-1.5 py-0.5 text-[10px] font-semibold text-rose-700 dark:bg-rose-950 dark:text-rose-300">
-                    1 Face + GPS
-                  </span>
-                </div>
-                <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
-                  Frontal face with embedded GPS tags and device metadata.
-                </p>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => onSelectSample('street_crowd')}
-                disabled={isProcessing}
-                className="flex flex-col items-start rounded-xl border border-zinc-200 bg-white p-3 text-left transition hover:border-sky-400 hover:shadow-xs active:scale-[0.99] dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-sky-500 cursor-pointer"
-              >
-                <div className="flex w-full items-center justify-between">
-                  <span className="text-xs font-bold text-zinc-900 dark:text-white">Street Bystanders</span>
-                  <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-950 dark:text-amber-300">
-                    3 Faces Detected
-                  </span>
-                </div>
-                <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
-                  Multiple bystander faces requiring multi-target anonymization.
-                </p>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => onSelectSample('document_privacy')}
-                disabled={isProcessing}
-                className="flex flex-col items-start rounded-xl border border-zinc-200 bg-white p-3 text-left transition hover:border-sky-400 hover:shadow-xs active:scale-[0.99] dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-sky-500 cursor-pointer"
-              >
-                <div className="flex w-full items-center justify-between">
-                  <span className="text-xs font-bold text-zinc-900 dark:text-white">High-Res Camera</span>
+                  <span className="text-xs font-bold text-zinc-900 dark:text-white">Portrait Photo</span>
                   <span className="rounded bg-sky-100 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700 dark:bg-sky-950 dark:text-sky-300">
-                    Delivery Bloat
+                    Face Detection
                   </span>
                 </div>
                 <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
-                  Large raw capture needing f_auto and q_auto optimization.
+                  Frontal portrait to test Cloudinary facial coordinate extraction and pixelation.
+                </p>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => onSelectSample('street')}
+                disabled={isProcessing}
+                className="flex flex-col items-start rounded-xl border border-zinc-200 bg-white p-3 text-left transition hover:border-sky-400 hover:shadow-xs active:scale-[0.99] dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-sky-500 cursor-pointer"
+              >
+                <div className="flex w-full items-center justify-between">
+                  <span className="text-xs font-bold text-zinc-900 dark:text-white">Street Scene</span>
+                  <span className="rounded bg-indigo-100 px-1.5 py-0.5 text-[10px] font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+                    Multi-Subject
+                  </span>
+                </div>
+                <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
+                  City street scene with multiple subjects to test bystander face and gravity detection.
+                </p>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => onSelectSample('nature')}
+                disabled={isProcessing}
+                className="flex flex-col items-start rounded-xl border border-zinc-200 bg-white p-3 text-left transition hover:border-sky-400 hover:shadow-xs active:scale-[0.99] dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-sky-500 cursor-pointer"
+              >
+                <div className="flex w-full items-center justify-between">
+                  <span className="text-xs font-bold text-zinc-900 dark:text-white">Nature Landscape</span>
+                  <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
+                    Optimization
+                  </span>
+                </div>
+                <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
+                  Wide outdoor photography to test content-aware smart cropping and format delivery.
                 </p>
               </button>
             </div>

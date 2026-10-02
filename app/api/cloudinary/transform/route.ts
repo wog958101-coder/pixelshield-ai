@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
         metadata: {
           format: 'Auto (AVIF / WebP)',
           appliedOperations: [
-            'Next-Gen Format Negotiation (f_auto)',
+            'Modern Format Negotiation (f_auto)',
             `Perceptual Compression (q_auto:${quality})`,
           ],
           originalSize: originalBytes,
@@ -166,9 +166,8 @@ export async function POST(req: NextRequest) {
             url,
           });
         }
-      } catch (err: any) {
-        // If probing network fails or timeout
-        console.warn('Background removal probe notice:', err?.message);
+      } catch {
+        // Network timeout or unconfigured probe
       }
 
       return NextResponse.json({

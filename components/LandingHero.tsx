@@ -85,29 +85,29 @@ export function LandingHero({ onStart, onSelectSample }: LandingHeroProps) {
           </button>
         </div>
 
-        {/* Quick Instant Test Presets */}
+        {/* Safe Sample Test Photos */}
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
-          <span className="font-medium">Try instant preset:</span>
+          <span className="font-medium">Try with sample photo:</span>
           <button
             type="button"
-            onClick={() => onSelectSample('portrait_id')}
+            onClick={() => onSelectSample('portrait')}
             className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-sky-300 hover:bg-sky-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-sky-800 transition cursor-pointer"
           >
-            Portrait Face ID
+            Portrait
           </button>
           <button
             type="button"
-            onClick={() => onSelectSample('street_crowd')}
+            onClick={() => onSelectSample('street')}
             className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-sky-300 hover:bg-sky-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-sky-800 transition cursor-pointer"
           >
-            Street Bystanders
+            Street Scene
           </button>
           <button
             type="button"
-            onClick={() => onSelectSample('document_privacy')}
+            onClick={() => onSelectSample('nature')}
             className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-sky-300 hover:bg-sky-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-sky-800 transition cursor-pointer"
           >
-            Camera Bloat
+            Landscape
           </button>
         </div>
 

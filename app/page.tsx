@@ -11,9 +11,8 @@ import { ResultExportBar } from '@/components/ResultExportBar';
 import { MediaSafetyReport, ProtectionOptions, TransformationResult } from '@/types/media';
 import { buildCloudinaryTransformationUrl } from '@/lib/cloudinary/transformations';
 import { buildOptimizedDeliveryUrl, buildSmartCropUrl, buildFormatConversionUrl } from '@/lib/cloudinary';
-import { SAMPLE_PRESETS } from '@/lib/cloudinary/presets';
 import { prepareImageForUpload } from '@/lib/image-compress';
-import { ShieldCheck, Sparkles, Terminal, ExternalLink, ArrowUp } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const DEFAULT_PROTECTION_OPTIONS: ProtectionOptions = {
   facePrivacy: 'pixelate',
@@ -249,26 +248,23 @@ export default function HomePage() {
     }
   };
 
-  // Handle instant sample selection
-  const handleSelectSample = (presetKey: string) => {
+  // Handle sample image selection (fetches real sample photo and processes through Cloudinary)
+  const handleSelectSample = async (sampleKey: string) => {
     setIsProcessing(true);
-    setProcessingStep('Loading sample media preset & AI telemetry...');
+    setProcessingStep(`Loading sample image (${sampleKey}.jpg)...`);
     setError(null);
     setLastFailedFile(null);
 
-    const sampleData = SAMPLE_PRESETS[presetKey] || SAMPLE_PRESETS['portrait_id'];
-    const now = Date.now();
-
-    setTimeout(() => {
-      setReport(sampleData);
-      setProtectionOptions({
-        ...DEFAULT_PROTECTION_OPTIONS,
-        facePrivacy: sampleData.privacyRisks.facesDetected > 0 ? 'pixelate' : 'none',
-        stripMetadata: true,
-      });
-      initializeResultsForReport(sampleData, now);
+    try {
+      const res = await fetch(`/samples/${sampleKey}.jpg`);
+      if (!res.ok) throw new Error(`Could not load sample image: ${sampleKey}.jpg`);
+      const blob = await res.blob();
+      const file = new File([blob], `${sampleKey}.jpg`, { type: 'image/jpeg' });
+      await handleUploadFile(file);
+    } catch (err: any) {
+      setError(err?.message || 'Failed to load sample image.');
       setIsProcessing(false);
-    }, 120);
+    }
   };
 
   // Add new transformation result to list or replace existing

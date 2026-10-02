@@ -362,7 +362,7 @@ export function ProtectAndTransformPanel({
               </span>
             </div>
             <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
-              Automatic next-gen format negotiation (AVIF/WebP) and perceptual visual quality.
+              Automatic modern format negotiation (AVIF/WebP) and perceptual quality optimization.
             </p>
 
             <div className="mt-3 flex flex-wrap gap-2">

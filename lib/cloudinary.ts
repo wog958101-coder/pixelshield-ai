@@ -109,9 +109,9 @@ export function buildFormatConversionUrl(
 }
 
 /**
- * Builds full privacy protection transformations
+ * Builds full Cloudinary transformation pipeline URL from options
  */
-export function buildProtectionUrl(
+export function buildCloudinaryTransformationUrl(
   cloudName: string,
   publicId: string,
   options: ProtectionOptions
@@ -212,8 +212,7 @@ export async function downloadCloudinaryAsset(url: string, suggestedFilename: st
     document.body.removeChild(link);
     window.URL.revokeObjectURL(blobUrl);
     return true;
-  } catch (err) {
-    console.warn('Direct blob download failed, falling back to window navigation:', err);
+  } catch {
     const link = document.createElement('a');
     link.href = url;
     link.download = suggestedFilename;

@@ -95,7 +95,7 @@ Cloudinary is the central engine of PixelShield AI. The actual workflow passes d
 - ✅ **Transformation Results Ledger:** Maintains a history of all generated assets displaying operations applied, verified file sizes, and percentage savings.
 - ✅ **Multi-Result Before / After Comparison:** Split slider and side-by-side viewer allowing users to compare the original raw photo against any generated result.
 - ✅ **Direct Asset Downloads:** Native client-side blob download (`downloadCloudinaryAsset`) triggering browser downloads of actual Cloudinary assets with correct extensions.
-- ✅ **Instant Presets (Zero Credentials Required):** Evaluators can test the entire pipeline immediately using pre-configured scenarios (Portrait Face ID, Street Bystanders, Camera Bloat).
+- ✅ **Sample Test Photos:** Evaluators can test the pipeline immediately using bundled sample photos (Portrait, Street Scene, Nature Landscape) to see real Cloudinary face and gravity analysis.
 - ✅ **Alpha Transparency Guards:** Warns users when converting PNG/WebP assets to JPG to prevent unexpected background flattening.
 - ✅ **Honest Capability Reporting:** Features requiring specific add-ons (such as `e_background_removal`) display a clear *"Not Configured"* notice rather than generating fake or mocked responses.
 

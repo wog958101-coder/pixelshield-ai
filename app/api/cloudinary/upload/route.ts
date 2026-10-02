@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCloudinaryClient, isCloudinaryConfigured, getCloudName } from '@/lib/cloudinary/client';
 import { MediaSafetyReport } from '@/types/media';
-import { SAMPLE_PRESETS } from '@/lib/cloudinary/presets';
 
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
@@ -11,17 +10,6 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
     const file = formData.get('file') as File | null;
-    const samplePreset = formData.get('samplePreset') as string | null;
-
-    // Handle Sample Preset (instant response)
-    if (samplePreset) {
-      const selected = SAMPLE_PRESETS[samplePreset] || SAMPLE_PRESETS['portrait_id'];
-      return NextResponse.json({
-        success: true,
-        report: selected,
-        isSample: true,
-      });
-    }
 
     if (!file) {
       return NextResponse.json({ error: 'No image file provided' }, { status: 400 });
@@ -122,8 +110,7 @@ export async function POST(req: NextRequest) {
         );
         stream.end(buffer);
       });
-    } catch (primaryError: any) {
-      console.warn('Full AI scan upload had issue, falling back to core face/exif scan:', primaryError?.message);
+    } catch {
       // Resilient fallback in case advanced moderation/quality add-ons are restricted on account
       uploadResult = await new Promise<any>((resolve, reject) => {
         const fallbackStream = cloudinary.uploader.upload_stream(
