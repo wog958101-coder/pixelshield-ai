@@ -5,7 +5,7 @@
 
 **Hackathon Track:** Track 1 — AI Media Pipelines  
 **Live Demo:** [[https://pixelshield-ai.vercel.app/]]
-**GitHub Repository:**[ [https://github.com/wog958101-coder/PixelSheildAi]]
+**GitHub Repository:**[ (https://github.com/wog958101-coder/pixelshield-ai.git)]]
 **License:** MIT
 
 ---
@@ -155,7 +155,7 @@ Cloudinary is the central engine of PixelShield AI. The actual workflow passes d
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/wog958101/pixelshield-ai.git
+git clone https://github.com/wog958101-coder/pixelshield-ai.git
 cd pixelshield-ai
 ```
 
