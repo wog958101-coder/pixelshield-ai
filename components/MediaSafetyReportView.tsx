@@ -4,17 +4,13 @@ import React from 'react';
 import { MediaSafetyReport } from '@/types/media';
 import {
   ShieldCheck,
-  ShieldAlert,
   AlertTriangle,
-  UserCheck,
   MapPin,
   Camera,
-  Layers,
   FileCheck2,
   HardDrive,
   Info,
   CheckCircle2,
-  XCircle,
   Tag,
   Server,
 } from 'lucide-react';

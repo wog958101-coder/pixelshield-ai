@@ -9,7 +9,6 @@ import {
   Download,
   Copy,
   Check,
-  ExternalLink,
   Layers,
   Crop,
   FileCode,

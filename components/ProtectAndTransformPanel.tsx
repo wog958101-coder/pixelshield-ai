@@ -7,18 +7,14 @@ import {
   FileCode,
   Shield,
   Layers,
-  Sparkles,
   Download,
   Copy,
   Check,
-  ExternalLink,
   Loader2,
   AlertTriangle,
   Info,
-  CheckCircle2,
   Columns2,
   Sliders,
-  ShieldAlert,
 } from 'lucide-react';
 import { TransformationResult, OperationStatus } from '@/types/media';
 import { formatBytes, downloadCloudinaryAsset } from '@/lib/cloudinary';

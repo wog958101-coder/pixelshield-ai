@@ -8,8 +8,6 @@ import {
   AlertTriangle,
   Menu,
   X,
-  ExternalLink,
-  Zap,
 } from 'lucide-react';
 
 interface NavbarProps {

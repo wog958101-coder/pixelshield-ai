@@ -7,9 +7,7 @@ import {
   MapPinOff,
   Zap,
   ArrowRight,
-  Layers,
   Sparkles,
-  Lock,
   Crop,
   FileCode,
   Shield,
@@ -19,6 +17,7 @@ import {
   Server,
   Share2,
 } from 'lucide-react';
+import { SAMPLE_IMAGES } from '@/lib/cloudinary/presets';
 
 interface LandingHeroProps {
   onStart: () => void;
@@ -88,27 +87,16 @@ export function LandingHero({ onStart, onSelectSample }: LandingHeroProps) {
         {/* Safe Sample Test Photos */}
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="font-medium">Try with sample photo:</span>
-          <button
-            type="button"
-            onClick={() => onSelectSample('portrait')}
-            className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-sky-300 hover:bg-sky-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-sky-800 transition cursor-pointer"
-          >
-            Portrait
-          </button>
-          <button
-            type="button"
-            onClick={() => onSelectSample('street')}
-            className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-sky-300 hover:bg-sky-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-sky-800 transition cursor-pointer"
-          >
-            Street Scene
-          </button>
-          <button
-            type="button"
-            onClick={() => onSelectSample('nature')}
-            className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-sky-300 hover:bg-sky-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-sky-800 transition cursor-pointer"
-          >
-            Landscape
-          </button>
+          {SAMPLE_IMAGES.map((sample) => (
+            <button
+              key={sample.key}
+              type="button"
+              onClick={() => onSelectSample(sample.key)}
+              className="rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-semibold text-zinc-700 hover:border-sky-300 hover:bg-sky-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-sky-800 transition cursor-pointer"
+            >
+              {sample.name}
+            </button>
+          ))}
         </div>
 
         {/* =========================================================================

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Download, Copy, Check, ExternalLink, RotateCcw, Terminal, Zap, ShieldCheck, Loader2 } from 'lucide-react';
+import { Download, Copy, Check, ExternalLink, RotateCcw, Terminal, ShieldCheck } from 'lucide-react';
 import { TransformationAudit } from '@/types/media';
 import { downloadCloudinaryAsset } from '@/lib/cloudinary';
 
